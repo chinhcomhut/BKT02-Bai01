@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BAI 01</title>
+</head>
+<body>
+<script>
+    let Pharmacist = function (id, name, age, address) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.address = address;
+
+        this.getId = function () {
+            return this.id;
+        };
+        this.getName = function () {
+            return this.name;
+        };
+
+        this.getAge = function () {
+            return this.age;
+        };
+
+        this.getAddress = function () {
+            return this.address;
+        };
+
+        this.setId = function () {
+            this.id = id;
+        };
+        this.setName = function () {
+            this.name = name;
+        };
+
+        this.setAge = function () {
+            this.age = age;
+        };
+
+        this.setAdress = function () {
+            this.address = address;
+        };
+    }
+    let listPharmacist = [];
+
+    let PharmacistManager = function () {
+        this.addPharmacist = function (id, name, age, address) {
+            let object = [];
+            object['id'] = id;
+            object['name'] = name;
+            object['age'] = age;
+            object['address'] = address;
+            listPharmacist.push(object);
+        };
+        this.displayPharmacist = function () {
+            for(let i = 0; i < listPharmacist.length; i++){
+                console.log(listPharmacist[i]);
+            }
+        };
+    };
+
+    let pharmacistManager = new PharmacistManager();
+    let pharmacist = new Pharmacist(1, 'Chính', 18, 'C0819H1');
+    let pharmacist2 = new Pharmacist(2, 'THANH', 19, 'CodeGym');
+
+    let id1 = pharmacist.getId();
+    let name1 = pharmacist.getName();
+    let age1 = pharmacist.getAge();
+    let address1 = pharmacist.getAddress();
+
+
+    let id2 = pharmacist2.getId();
+    let name2 = pharmacist2.getName();
+    let age2 = pharmacist2.getAge();
+    let address2 = pharmacist2.getAddress();
+
+
+    pharmacistManager.addPharmacist(id1, name1, age1, address1);
+    pharmacistManager.addPharmacist(id2,name2, age2, address2);
+
+    pharmacistManager.displayPharmacist();
+</script>
+</body>
+</html>
